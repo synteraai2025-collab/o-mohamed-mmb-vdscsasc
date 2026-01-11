@@ -18,9 +18,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className={`${inter.className} antialiased`}>
+        <nav className="bg-primary text-primary-foreground p-4">
+          <div className="container mx-auto flex justify-between items-center">
+            <Link href="/" className="text-xl font-bold">
+              Registration App
+            </Link>
+            <div className="flex space-x-4">
+              <Link href="/" className="hover:text-accent-foreground transition-colors">
+                Home
+              </Link>
+              <Link href="/register" className="hover:text-accent-foreground transition-colors">
+                Register
+              </Link>
+            </div>
+          </div>
+        </nav>
         <ReactQueryProvider>{children}</ReactQueryProvider>
       </body>
     </html>
   );
 }
+
